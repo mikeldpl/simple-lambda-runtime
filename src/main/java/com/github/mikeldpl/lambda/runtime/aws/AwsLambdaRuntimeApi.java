@@ -36,7 +36,12 @@ public class AwsLambdaRuntimeApi implements LambdaRuntimeApi {
             final String responseBody = readResponseBody(connection);
             final String lambdaRuntimeAwsRequestId = connection.getHeaderField("Lambda-Runtime-Aws-Request-Id");
             final String lambdaRuntimeTraceId = connection.getHeaderField("Lambda-Runtime-Trace-Id");
-            return new Invocation(lambdaRuntimeAwsRequestId, lambdaRuntimeTraceId, responseBody);
+            final String lambdaRuntimeClientContext = connection.getHeaderField("Lambda-Runtime-Client-Context");
+            final String lambdaRuntimeCognitoIdentity = connection.getHeaderField("Lambda-Runtime-Cognito-Identity");
+            final String lambdaRuntimeDeadlineMs = connection.getHeaderField("Lambda-Runtime-Deadline-Ms");
+            final String lambdaRuntimeInvokedFunctionArn = connection.getHeaderField("Lambda-Runtime-Invoked-Function-Arn");
+            return new Invocation(lambdaRuntimeAwsRequestId, lambdaRuntimeTraceId, lambdaRuntimeClientContext, lambdaRuntimeCognitoIdentity,
+                                  lambdaRuntimeDeadlineMs, lambdaRuntimeInvokedFunctionArn, responseBody);
         } catch (IOException e) {
             throw new LambdaRuntimeException(e);
         }
