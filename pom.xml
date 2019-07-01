@@ -4,7 +4,7 @@
 
     <groupId>com.github.mikeldpl.lambda.runtime</groupId>
     <artifactId>simple-lambda-runtime</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <!--==================================================================-->
     <name>simple-lambda-runtime</name>
@@ -31,7 +31,7 @@
         <connection>scm:git:git://github.com/mikeldpl/simple-lambda-runtime.git</connection>
         <developerConnection>scm:git:ssh://github.com:mikeldpl/simple-lambda-runtime.git</developerConnection>
         <url>https://github.com/mikeldpl/simple-lambda-runtime/tree/master</url>
-      <tag>simple-lambda-runtime-1.0</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <distributionManagement>
